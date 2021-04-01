@@ -1,0 +1,407 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Courier Prime", monospace;
+  line-height: 1.6rem;
+}
+.container {
+  width: 90%;
+  margin: auto;
+}
+.container.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.title {
+  flex: 1;
+}
+.bag {
+  cursor: pointer;
+
+  padding: 1.5rem 2.2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.bag .badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.4rem 0.3rem 0rem 0.3rem;
+  border-radius: 50%;
+  background-color: rgb(218, 50, 50);
+  color: white;
+}
+
+.bag:hover > .fa {
+  color: rgb(218, 50, 50);
+}
+
+header {
+  color: white;
+  font-size: 2.5rem;
+  background-image: linear-gradient(rgb(29, 28, 28), rgb(32, 76, 117));
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+footer {
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(rgb(32, 76, 117), rgb(29, 28, 28));
+  padding: 2rem;
+}
+ul {
+  list-style-type: none;
+}
+nav ul {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  font-size: 2rem;
+  margin: 1rem;
+  justify-content: flex-end;
+}
+ul > li {
+  margin-right: 1rem;
+}
+ul li:last-child {
+  margin-left: 1rem;
+}
+
+ul li a {
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  color: black;
+  border-bottom: 0.1rem solid black;
+}
+
+ul li a:hover {
+  color: rgb(46, 46, 140);
+}
+
+.parallax.top {
+  background: url(../img/background3.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 30vw;
+  background-attachment: fixed;
+  position: relative;
+  box-shadow: 0rem 0rem 1rem 0.1rem black;
+}
+.search {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+input[type="text"],
+input[type="number"] {
+  padding: 1.3rem;
+  font-size: 2.5rem;
+  outline: 0;
+  border: 0;
+  background: white;
+  color: black;
+  border: 0.3rem solid white;
+  box-shadow: 0 0 0.3rem 0.3rem black;
+}
+button,
+input[type="submit"] {
+  min-width: 3vw;
+  padding: 1.3rem;
+  font-size: 2.5rem;
+  outline: 0;
+  border: 0;
+  background: white;
+  color: black;
+  border: 0.3rem solid black;
+  box-shadow: 0 0 0.3rem 0rem white;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+button:hover,
+input[type="submit"]:hover {
+  color: white;
+  background: black;
+  border: 0.3rem solid white;
+  box-shadow: 0 0 0.3rem 0.2rem black;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  padding: 5rem;
+  flex-wrap: wrap;
+}
+.wrapper {
+  box-shadow: 0rem 0rem 0.2rem 0.1rem black;
+  flex-basis: 12vw;
+  min-width: 30rem;
+  margin: 1rem;
+}
+/* same stage */
+.watch {
+  position: relative;
+  cursor: pointer;
+  padding: 0.3rem;
+}
+.image {
+  width: 100%;
+  height: 30rem;
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(29, 28, 28);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+}
+.watch:hover .overlay {
+  height: 15%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+/* same stage */
+.details {
+  padding: 1rem;
+  background-image: linear-gradient(rgb(32, 76, 117), rgb(29, 28, 28));
+  text-align: center;
+  color: white;
+}
+.details p:nth-child(2) {
+  margin: 1rem 0;
+}
+.isInStock {
+  color: rgb(78, 213, 78);
+}
+.isInStockFalse {
+  color: red;
+}
+
+.parallax.bottom {
+  background: url(../img/background.jpg) no-repeat;
+  filter: contrast(90%);
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  height: 30vw;
+  background-attachment: fixed;
+  position: relative;
+  color: white;
+}
+.parallax.bottom p {
+  text-shadow: 0.3rem 0.3rem 0.3rem black;
+  color: white;
+  font-size: 4rem;
+  text-align: justify;
+  line-height: 4rem;
+  position: absolute;
+  top: 70%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+  filter: contrast(180%);
+  padding: 1rem;
+}
+.visualEffectoff {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: 0.8s all ease-in-out;
+}
+.visualEffectoff.on {
+  opacity: 1;
+  transform: translateY(0rem);
+}
+table {
+  font-weight: bold;
+  font-size: 2rem;
+  width: 50vw;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 0.1rem solid black;
+}
+/*
+table p {
+  display: inline-block;
+} */
+
+table td,
+th {
+  border-bottom: 0.1rem solid black;
+  padding: 1rem;
+  text-align: center;
+}
+table th {
+  background: black;
+  color: white;
+}
+table td span {
+  font-weight: bold;
+  margin: 1rem;
+  font-size: 2.2rem;
+}
+.item {
+  display: flex;
+  align-items: center;
+}
+.minus,
+.plus {
+  font-size: 2rem;
+  padding: 0.3rem 0.6rem;
+  min-width: 3rem;
+  border: none;
+  box-shadow: none;
+  transition: none;
+  background: black;
+  color: white;
+}
+
+.plus:hover,
+.minus:hover {
+  box-shadow: none;
+  border: none;
+}
+/* add to main after click basket */
+.mainClass {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.avg {
+  font-weight: bold;
+  padding: 2rem;
+  font-size: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.avg button {
+  margin: 0 2rem;
+  font-size: 2rem;
+}
+
+td img {
+  min-width: 30rem;
+}
+
+#total {
+  color: rgb(214, 80, 80);
+}
+
+h1 {
+  margin: 5rem;
+  color: white;
+}
+input[name="name"],
+input[name="price"] {
+  margin-bottom: 1rem;
+}
+input[type="radio"] {
+  margin: 2rem 0rem;
+  opacity: 0;
+  width: 0;
+}
+label[for="true"],
+label[for="false"] {
+  font-size: 2rem;
+  color: white;
+  padding: 1rem;
+  background: url(../img/ic_radio_button_off_128_28539.png) no-repeat;
+  background-position: 0;
+  background-size: 2.6rem;
+  padding-left: 3rem;
+  cursor: pointer;
+  display: inline-block;
+}
+input[type="radio"]:checked + label[for="true"],
+input[type="radio"]:checked + label[for="false"] {
+  background: url(../img/Tick_Mark_Circle_icon-icons.com_69145.png) no-repeat;
+  background-position: 0;
+  background-size: 2.6rem;
+  padding-left: 3rem;
+}
+form {
+  background-image: linear-gradient(rgb(29, 28, 28), rgb(32, 76, 117));
+  padding: 2rem;
+  border: 0.2rem solid black;
+  text-align: center;
+  border-radius: 5rem;
+}
+
+select {
+  outline: 0;
+  font-size: 2rem;
+  padding: 0.1rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  margin: 1rem 0rem 2rem 0rem;
+}
+
+.success {
+  color: rgb(4, 230, 4);
+  display: block;
+  margin: 3rem;
+  font-size: 2rem;
+  opacity: 0;
+}
+
+.success.timeout {
+  opacity: 100%;
+}
+
+.editAndDelete {
+  display: flex;
+  justify-content: center;
+}
+.editButton,
+.deleteButton {
+  font-size: 1.6rem;
+  padding: 0.7rem;
+  border: 0;
+  box-shadow: none;
+  background: rgb(47, 94, 138);
+  color: white;
+  margin: 0.1rem 1rem;
+}
+.editButton:hover,
+.deleteButton:hover {
+  border: 0;
+  box-shadow: none;
+}
+.deleteButton:hover {
+  background: rgb(192, 102, 102);
+}
+.editButton:hover {
+  background: rgb(233, 233, 141);
+  color: black;
+}
